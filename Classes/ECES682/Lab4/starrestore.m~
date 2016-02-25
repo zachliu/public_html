@@ -1,0 +1,41 @@
+%% Star prepare
+stara = imread('star1.tif');
+figure(1);
+imshow(stara)
+starb = imread('star1.jpg');
+figure(2);
+imshow(starb)
+%%
+a = 7;
+filt = gee(512,512,a,0,0,1)/(a^2);
+cut = 1000;
+fftfilt = fft2(fftshift(filt));
+filr = real(fftfilt);
+fili = imag(fftfilt);
+filr = max(1/cut, filr);
+fili = max(1/cut, fili);
+fil = filr + i*fili;
+fil = 1./fil;
+% imshow(abs(fftshift(fftfilt)))
+starft = fft2(stara);
+newft = starft.*fil;
+mod = ifft2(newft);
+figure(3)
+imshow(mod,[0,255])
+%%
+a = 7;
+filt = gee(512,512,a,0,0,1)/(a^2);
+cut = 10;
+fftfilt = fft2(fftshift(filt));
+filr = real(fftfilt);
+fili = imag(fftfilt);
+filr = max(1/cut, filr);
+fili = max(1/cut, fili);
+fil = filr + i*fili;
+fil = 1./fil;
+% imshow(abs(fftshift(fftfilt)))
+starft = fft2(starb);
+newft = starft.*fil;
+mod = ifft2(newft);
+figure(3)
+imshow(mod,[0,255])

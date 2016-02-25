@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+	<head>
+		<title>Zexi Liu - Classes - CS583 - proj3</title>
+        <STYLE TYPE="text/css">
+        <!--
+        .indented
+            {
+            padding-left: 2%;
+            padding-right: 2%;
+            }
+        -->
+        </STYLE>
+	</head>
+    <link rel="stylesheet" href="./class.css" type="text/css">
+	<body background="http://www.cs.drexel.edu/~zl54/Images/Creme_browserbg.jpg">
+        <br>
+        <center>        
+        <table bgcolor=black border="0" cellspacing="1" cellpadding="18" width="750">
+			<tr>
+            <td background="../../Images/ParchmentBG.jpg" align="left" valign="middle">
+                <div style="height: 85px; left: 0px; position: relative; top: 0px; width: 712px;">
+                    <div style="height: 30px; width: 110px; right: 0px; position: absolute; top: 0px;">
+                        <a href="../../classes.html">Back to Classes</a>
+                    </div>
+                    <div style="height: 80px; width: 399px; left: 0px; position: absolute; top: 0px;">
+                        <strong><a href="http://www.cs.drexel.edu/~gao25/CS-583/PhotometricStereo/">Project 3.</a> </strong><strong>Photometric Stereo</strong><br>
+                        <br>
+                        The pde files (<a href="mailto:zexi@drexel.edu">email me to get the code</a>)
+                        <br/>The updated ini file (<a href="proj3/Data/photometricStereo.ini">photometricStereo.ini</a>)
+                        <br/><a href="proj3/Data/">Data</a> directory.
+                        </p>
+                    </div>
+                </div>            
+            <hr size="3" width="100%"/>
+
+            <p>
+            This project requires estimating light source directions, surface normals, albedos and depth (based on surface normals) from a series of chrome sphere images.  Then the images can be relit from any direction (by Relight.pde).
+            </p>
+            <center>
+            <table>
+            <tr>
+            <td align="center"><b>Original <br>Image #0</b></td>
+            <td align="center"><b>Normal Map</b></td>
+            <td align="center"><b>Albedo Map</b></td>
+            <td align="center"><b>Depth Map</b></td>
+            <td align="center"><b>Relight: <br>Non-uniform<br> Albedo</b></td>
+            
+            <td align="center"><b>Relight: <br>Uniform<br> Albedo</b></td>
+            </tr>
+            <tr>
+            <td><a href="proj3/Data/buddha.0.png"><img align="middle" src="proj3/Data/thumbs/buddha.0.png" border="0" alt="" width=115/></a></td>
+            <td><a href="proj3/Data/buddha.normal.png"><img align="middle" src="proj3/Data/thumbs/buddha.normal.png" border="0" alt="" width=115/></a></td>
+            <td><a href="proj3/Data/buddha.albedo.png"><img align="middle" src="proj3/Data/thumbs/buddha.albedo.png" border="0" alt="" width=115/></a></td>
+            <td><a href="proj3/Data/buddha.depth.png"><img align="middle" src="proj3/Data/thumbs/buddha.depth.png" border="0" alt="" width=115/></a></td>
+            <td><a href="proj3/Data/buddha.relight.png"><img align="middle" src="proj3/Data/thumbs/buddha.relight.png" border="0" alt="" width=115/></a></td>
+            <td><a href="proj3/Data/buddha.uniform.png"><img align="middle" src="proj3/Data/thumbs/buddha.uniform.png" border="0" alt="" width=115/></a></td>
+            </tr>
+            <tr>
+            <td><a href="proj3/Data/cat.0.png"><img align="middle" src="proj3/Data/thumbs/cat.0.png" border="0" alt="" width=115/></a></td>
+            <td><a href="proj3/Data/cat.normal.png"><img align="middle" src="proj3/Data/thumbs/cat.normal.png" border="0" alt="" width=115/></a></td>
+            <td><a href="proj3/Data/cat.albedo.png"><img align="middle" src="proj3/Data/thumbs/cat.albedo.png" border="0" alt="" width=115/></a></td>
+            <td><a href="proj3/Data/cat.depth.png"><img align="middle" src="proj3/Data/thumbs/cat.depth.png" border="0" alt="" width=115/></a></td>
+            <td><a href="proj3/Data/cat.relight.png"><img align="middle" src="proj3/Data/thumbs/cat.relight.png" border="0" alt="" width=115/></a></td>
+            
+            <td><a href="proj3/Data/cat.uniform.png"><img align="middle" src="proj3/Data/thumbs/cat.uniform.png" border="0" alt="" width=115/></a></td>
+            </tr>
+            <tr>
+            <td><a href="proj3/Data/gray.0.png"><img align="middle" src="proj3/Data/thumbs/gray.0.png" border="0" alt="" width=115/></a></td>
+            <td><a href="proj3/Data/gray.normal.png"><img align="middle" src="proj3/Data/thumbs/gray.normal.png" border="0" alt="" width=115/></a></td>
+            <td><a href="proj3/Data/gray.albedo.png"><img align="middle" src="proj3/Data/thumbs/gray.albedo.png" border="0" alt="" width=115/></a></td>
+            <td><a href="proj3/Data/gray.depth.png"><img align="middle" src="proj3/Data/thumbs/gray.depth.png" border="0" alt="" width=115/></a></td>
+            <td><a href="proj3/Data/gray.relight.png"><img align="middle" src="proj3/Data/thumbs/gray.relight.png" border="0" alt="" width=115/></a></td>
+            <td><a href="proj3/Data/gray.uniform.png"><img align="middle" src="proj3/Data/thumbs/gray.uniform.png" border="0" alt="" width=115/></a></td>
+            </tr>
+            <tr>
+            <td><a href="proj3/Data/horse.0.png"><img align="middle" src="proj3/Data/thumbs/horse.0.png" border="0" alt="" width=115/></a></td>
+            <td><a href="proj3/Data/horse.normal.png"><img align="middle" src="proj3/Data/thumbs/horse.normal.png" border="0" alt="" width=115/></a></td>
+            <td><a href="proj3/Data/horse.albedo.png"><img align="middle" src="proj3/Data/thumbs/horse.albedo.png" border="0" alt="" width=115/></a></td>
+            <td><a href="proj3/Data/horse.depth.png"><img align="middle" src="proj3/Data/thumbs/horse.depth.png" border="0" alt="" width=115/></a></td>
+            <td><a href="proj3/Data/horse.relight.png"><img align="middle" src="proj3/Data/thumbs/horse.relight.png" border="0" alt="" width=115/></a></td>
+            <td><a href="proj3/Data/horse.uniform.png"><img align="middle" src="proj3/Data/thumbs/horse.uniform.png" border="0" alt="" width=115/></a></td>
+            
+            </tr>
+            <tr>
+            <td><a href="proj3/Data/owl.0.png"><img align="middle" src="proj3/Data/thumbs/owl.0.png" border="0" alt="" width=115/></a></td>
+            <td><a href="proj3/Data/owl.normal.png"><img align="middle" src="proj3/Data/thumbs/owl.normal.png" border="0" alt="" width=115/></a></td>
+            <td><a href="proj3/Data/owl.albedo.png"><img align="middle" src="proj3/Data/thumbs/owl.albedo.png" border="0" alt="" width=115/></a></td>
+            <td><a href="proj3/Data/owl.depth.png"><img align="middle" src="proj3/Data/thumbs/owl.depth.png" border="0" alt="" width=115/></a></td>
+            <td><a href="proj3/Data/owl.relight.png"><img align="middle" src="proj3/Data/thumbs/owl.relight.png" border="0" alt="" width=115/></a></td>
+            <td><a href="proj3/Data/owl.uniform.png"><img align="middle" src="proj3/Data/thumbs/owl.uniform.png" border="0" alt="" width=115/></a></td>
+            </tr>
+            <tr>
+            <td><a href="proj3/Data/rock.0.png"><img align="middle" src="proj3/Data/thumbs/rock.0.png" border="0" alt="" width=115/></a></td>
+            <td><a href="proj3/Data/rock.normal.png"><img align="middle" src="proj3/Data/thumbs/rock.normal.png" border="0" alt="" width=115/></a></td>
+            <td><a href="proj3/Data/rock.albedo.png"><img align="middle" src="proj3/Data/thumbs/rock.albedo.png" border="0" alt="" width=115/></a></td>
+            <td><a href="proj3/Data/rock.depth.png"><img align="middle" src="proj3/Data/thumbs/rock.depth.png" border="0" alt="" width=115/></a></td>
+            <td><a href="proj3/Data/rock.relight.png"><img align="middle" src="proj3/Data/thumbs/rock.relight.png" border="0" alt="" width=115/></a></td>
+            <td><a href="proj3/Data/rock.uniform.png"><img align="middle" src="proj3/Data/thumbs/rock.uniform.png" border="0" alt="" width=115/></a></td>
+            </tr>
+            
+            </table>
+            </center>
+<!--          
+          <br>
+          <center>
+          <h4><a href="proj3/demo/index.html">Link to Relight visualization.</a></h4>
+          </center>
+          <br>
+--> 
+          <p></p>
+                <hr size="3" width="100%"/>
+                <strong>Notes</strong><br>
+                <br>
+                
+                    <div CLASS="indented">
+                    <li>All tasks are fulfilled as required.</li>
+                    </div>                
+               	
+                	<div CLASS="indented">
+					<li>Trick for handling shadows is used: weight each equation by the pixel brightness.</li>
+					</div>			
+               	
+                	<div CLASS="indented">
+					<li>Normals are solved based on lecture notes: inverse of ST*S.</li>
+					</div>
+               	
+                	<div CLASS="indented">
+					<li>Albedos are solved by the inverse of Sn and then times I(IR, IG, and IB)</li>                 
+					</div> 
+                    
+                	<div CLASS="indented">
+					<li>I'm not sure why does the exported applet (Relight) do not work.</li>                 
+					</div> 
+                    
+                    <br>
+                    <br>
+            	<hr size="3" width="100%"/>
+                <p></p>
+            </tr>
+        </table>        
+        </center>
+        <br>
+	</body>     
+</html>

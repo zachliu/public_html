@@ -1,0 +1,51 @@
+# ====================================================================================================================================
+# scene definations
+# ====================================================================================================================================
+# "T" stands for triangle mesh
+# "S" stabds for sphere
+# "L" stabds for light source
+# "C" stabds for camera parameters
+# "P" stabds for plane
+# T <filename> <scalefactor x y z> <rotation degrees x y z> <translate x y z> <color r g b (0-1)> <material ka kd ks exp>
+# S <centerpoint x y z> <radius> <color r g b (0-1)> <material ka kd ks exp>
+# L <point light source x y z> <intensity> <directional light source x y z> <radiance> <ambient light radiance>
+# C <resolution h v> <view angle h v> <eye point x y z> <up vector x y z> <look at point x y z> <view distance>
+# P <point x y z> <normal x y z> <color r g b (0-1)> <material ka kd ks exp>
+# ====================================================================================================================================
+
+# set up light
+L 3 3 3 0.5 0 0 1 0.3 0.5
+
+# set up camera parameters
+C 512 512 56 56 3 0 0 0 1 0 0 0 0 1
+
+# add spheres
+S 0 0 1 .4 1 0 0 0.25 0.75 0.5 50
+S 0 0 -1 .4 0 1 0 0.25 0.75 0.5 50
+#S -4 1.5 1.5 .5 1 0 0 0.25 0.75 0.5 50
+#S -4 1.5 -1.5 .5 0 1 0 0.25 0.75 0.5 50
+#S -3 1.5 0 .5 0 1 0 0.25 0.75 0.5 50
+#S -3 0 1.5 .5 0 1 0 0.25 0.75 0.5 50
+#S -3 0 0 .5 0 1 0 0.25 0.75 0.5 50
+#S -3 0 -1.5 .5 0 1 0 0.25 0.75 0.5 50
+#S -3 -1.5 0 .5 0 1 0 0.25 0.75 0.5 50
+#S -4 -1.5 1.5 .5 1 0 0 0.25 0.75 0.5 50
+#S -4 -1.5 -1.5 .5 0 1 0 0.25 0.75 0.5 50
+
+# add triangle mesh models
+T bound-bunny_200.smf 0 0 0 45 0 0 0 0 0 1 1 1 0.25 0.75 0.5 50
+#T bound-bunny_200.smf 0 0 0 45 0 0 0 1 1 1 1 1 0.25 0.75 0.5 50
+#T cube.smf 0 0 0 45 0 0 0 0 0 1 1 1 0.25 0.75 0.5 50
+#T cube.smf 0 0 0 45 0 0 0 0 1 1 1 1 0.25 0.75 0.5 50
+#T cube.smf 0 0 0 45 0 0 0 0 -1 1 1 1 0.25 0.75 0.5 50
+#T cube.smf 0 0 0 45 0 0 0 1 -1 1 1 1 0.25 0.75 0.5 50
+#T cube.smf 0 0 0 45 0 0 0 -1 1 1 1 1 0.25 0.75 0.5 50
+#T cube.smf 0 0 0 45 0 0 0 1 1 1 1 1 0.25 0.75 0.5 50
+#T cube.smf 0 0 0 45 0 0 0 1 0 1 1 1 0.25 0.75 0.5 50
+#T cube.smf 0 0 0 45 0 0 0 -1 0 1 1 1 0.25 0.75 0.5 50
+#T cube.smf 0 0 0 45 0 0 0 -1 -1 1 1 1 0.25 0.75 0.5 50
+#T penguin.smf 1 1 1 0 0 0 0 .3 -.6 0 0 1 0.25 0.75 0.5 50
+
+# add planes
+P 0 -1 0 0 1 0 0.75 0.75 0.75 0.25 0.75 0.5 50
+P 0 0 -1 0 0 1 0.75 0.75 0.75 0.25 0.75 0.5 50

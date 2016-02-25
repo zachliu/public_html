@@ -1,0 +1,51 @@
+README
+==============================================
+cs536: Computer Graphics I
+Assignment #5: Z-buffer Rendering
+==============================================
+
+by Zexi Liu
+on Nov 25th, 2009
+
+In this assignment, I submitted the following three files:
+
+    README
+    cs536_hw5.cpp(contains main())
+    Makefile
+
+Language used:	C++
+OS used:	Windows 7
+Compiler used:	g++ in tux (ssh to tux server: tux.cs.drexel.edu)
+		Version 4.3.3 (Ubuntu 4.3.3-5ubuntu4)
+Compile/link:	Makefile has the default rule compile my program
+
+Libraries included:
+# iostream
+# fstream
+# cstring
+# ctype
+# cstdlib
+# cmath
+
+Features of the program:
+* It handles command-line options with any arbitrary order and any subset of the options.
+* It recognizes the mistakes in the input options such as illegal file name, unexpected 
+  characters, and so on.
+  eg.
+	if the input command is: 
+		./cs536_hw5 -1 -r 30s -s 1.2 > out.xpm
+	error message will be:
+		Option '-1' missing arguments! Use default value: hw5.smf
+		Argument follows '-r' should be a integer number! '30s' is NOT a number!
+ 	
+	if the input command is:
+		./cs536_hw5 -1 -r 30 -r 34 -s 1.2 > out.xpm
+	error message will be:
+		Option '-1' missing arguments! Use default value: hw5.smf
+		Too many '-r'! Only the 1st one will be accepted!
+
+* It reads arbitrary number of  vertices and faces of a 3D model from a SMF file.
+* It uses Sutherland-Hodgman algorithm for polygon (triangle) clipping.
+* It uses scan-line algorithm for polygon (triangle) filling.
+* It implements Z-buffer rendering with 20 shades for each color (R/G/B).
+* It outputs final results to an xpm file.

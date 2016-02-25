@@ -1,0 +1,37 @@
+# "t" stands for triangle mesh
+# "s" stabds for sphere
+# "l" stabds for light source
+# "c" stabds for camera parameters
+# "p" stabds for plane
+# t <filename> <scalefactor x y z> <rotation degrees x y z> <translate x y z> <color r g b (0-1)>
+# s <centerpoint x y z> <radius> <color r g b (0-1)>
+# l <point light source x y z> <intensity> <directional light source x y z> <radiance>
+# c <resolution h v> <view angle h v> <eye point x y z> <up vector x y z> <look at point x y z> <view distance>
+# p <point x y z> <normal x y z>
+
+c 512 512 56 56 3 0 0 0 1 0 0 0 0 1
+l 3 3 3 0.5 0 0 1 2
+s 0 0 1 .4 1 0 0 
+s 0 0 -1 .4 0 1 0 
+#s -4 1.5 1.5 .5 1 0 0 
+#s -4 1.5 -1.5 .5 0 1 0
+#s -3 1.5 0 .5 0 1 0
+#s -3 0 1.5 .5 0 1 0
+#s -3 0 0 .5 0 1 0
+#s -3 0 -1.5 .5 0 1 0
+#s -3 -1.5 0 .5 0 1 0
+#s -4 -1.5 1.5 .5 1 0 0 
+#s -4 -1.5 -1.5 .5 0 1 0
+#t bound-bunny_200.smf 0 0 0 45 0 0 0 1 1 1 1 1
+t bound-bunny_200.smf 0 0 0 45 0 0 0 0 0 1 1 1
+#t cube.smf 0 0 0 45 0 0 0 0 0 1 1 1
+#t cube.smf 0 0 0 45 0 0 0 0 1 1 1 1
+#t cube.smf 0 0 0 45 0 0 0 0 -1 1 1 1
+#t cube.smf 0 0 0 45 0 0 0 1 -1 1 1 1
+#t cube.smf 0 0 0 45 0 0 0 -1 1 1 1 1
+#t cube.smf 0 0 0 45 0 0 0 1 1 1 1 1
+#t cube.smf 0 0 0 45 0 0 0 1 0 1 1 1
+#t cube.smf 0 0 0 45 0 0 0 -1 0 1 1 1
+#t cube.smf 0 0 0 45 0 0 0 -1 -1 1 1 1
+# t penguin.smf 1 1 1 0 0 0 0 .3 -.6 0 0 1
+p 0 -1 0 0 1 0

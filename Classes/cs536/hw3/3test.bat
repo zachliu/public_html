@@ -1,0 +1,1 @@
+hw3 -f hw3.ps -a 50 -b 0 -c 325 -d 500 -j 0 -k 110 -o 480 -p 410 -s 1 -m 0 -n 0 -r 0 > hw3_c.xpm

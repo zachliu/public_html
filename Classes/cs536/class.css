@@ -1,0 +1,27 @@
+BODY {
+	FONT-FAMILY: Verdana; COLOR: black; FONT-SIZE: 12px
+}
+TABLE {
+	FONT-FAMILY: Verdana; FONT-SIZE: 12px
+}
+H2 {
+	FONT-FAMILY: Verdana; FONT-SIZE: 24px
+}
+H3 {
+	FONT-FAMILY: Verdana; FONT-SIZE: 18px
+}
+H4 {
+	FONT-FAMILY: Verdana; FONT-SIZE: 14px
+}
+A:link {
+	COLOR: navy; TEXT-DECORATION: underline
+}
+A:visited {
+	COLOR: navy; TEXT-DECORATION: underline
+}
+A:hover {
+	COLOR: red; TEXT-DECORATION: none
+}
+A:active {
+	COLOR: red; TEXT-DECORATION: none
+}

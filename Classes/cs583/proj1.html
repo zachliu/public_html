@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+	<head>
+		<title>Zexi Liu - Classes - CS583</title>
+	</head>
+    <link rel="stylesheet" href="./class.css" type="text/css">
+	<body background="http://www.cs.drexel.edu/~zl54/Images/Creme_browserbg.jpg">
+        <br>
+        <center>        
+        <table bgcolor=black border="0" cellspacing="1" cellpadding="18" width="750">
+			<tr>
+            <td background="../../Images/ParchmentBG.jpg" align="left" valign="middle">            
+                <div style="height: 85px; left: 0px; position: relative; top: 0px; width: 712px;">
+                    <div style="height: 30px; width: 110px; right: 0px; position: absolute; top: 0px;">
+                        <a href="../../classes.html">Back to Classes</a>
+                    </div>
+                    <div style="height: 80px; width: 312px; left: 0px; position: absolute; top: 0px;">
+                        <strong><a href="http://www.cs.drexel.edu/~gao25/CS-583/Homography/">Project 1.</a> </strong><strong>Homography</strong><br>
+                        <br>
+                        The main pde file (<a href="mailto:zexi@drexel.edu">email me to get the code</a>)
+                        <br>The updated ini file (<a href="proj1/Data/homography.ini">homography.ini</a>)
+                        <br><a href="proj1/Data/">Data</a> directory.
+                        </p>
+                    </div>
+                </div>            
+            	<hr size="3" width="100%"/>
+            	<strong>First part: Image rectification.<br/></strong>Fix four pairs of corresponding&nbsp;points on source image and on target plane.<br/>Calculate the homography matrix&nbsp;H and its inverse H'.<br/>Calculate the&nbsp;bounding box of&nbsp;an image after applying the homography.<br/>The actual computation of the warped image&nbsp;was compeled using inverse-warping.<br/>And bi-linear interpolation was used to compute the pixel values for those non-integer image coordinates.&nbsp;&nbsp;&nbsp;</p>
+            	<hr size="3" width="100%"/>
+            	<p></p>
+            	<p></p>
+                <center>
+				<p>
+                
+              	<a href="proj1/Data/drexel.jpg"><img src="proj1/Data/drexel.jpg" height="200"/></a>
+              	<a href="proj1/Data/rectified_drexel.jpg"><img src="proj1/Data/rectified_drexel.jpg" height="200"/></a>                
+                </p><p>[Rectification example #1]<br/>
+                sourceImage = <a href="proj1/Data/drexel.jpg">drexel.jpg<br/></a>
+                sourcePoints = <a href="proj1/Data/drexel.source">drexel.source<br/></a>
+                targetPoints = <a href="proj1/Data/drexel.target">drexel.target<br/></a>
+                outputFile = <a href="proj1/Data/rectified_drexel.jpg">rectified_drexel.jpg<br/></a>
+                <br>
+                <a href="proj1/Data/screen.jpg"><img src="proj1/Data/screen.jpg" height="170"/></a> 
+                <a href="proj1/Data/rectified_screen.jpg"><img src="proj1/Data/rectified_screen.jpg" height="170"/></a>
+                </p><p>[Rectification example #2]<br/>
+                sourceImage = <a href="proj1/Data/screen.jpg">screen.jpg<br/></a>
+                sourcePoints = <a href="proj1/Data/screen.source">screen.source<br/></a>
+                targetPoints = <a href="proj1/Data/screen.target">screen.target<br/></a>
+                outputFile = <a href="proj1/Data/rectified_screen.jpg">rectified_screen.jpg<br/></a>
+                <br>
+                <a href="proj1/Data/labwall.jpg"><img src="proj1/Data/labwall.jpg" height="220"/></a> 
+                <a href="proj1/Data/rectified_labwall.jpg"><img src="proj1/Data/rectified_labwall.jpg" height="220"/></a>
+                </p><p>[Rectification example #3]<br/>sourceImage = <a href="proj1/Data/labwall.jpg">labwall.jpg<br/></a>
+                sourcePoints = <a href="proj1/Data/labwall.source">labwall.source<br/></a>
+                targetPoints = <a href="proj1/Data/labwall.target">labwall.target<br/></a>
+                outputFile = <a href="proj1/Data/rectified_labwall.jpg">rectified_labwall.jpg</a></p><p>
+              	<br/>
+                </center>
+              	<hr size="3" width="100%"/>
+              	<strong>Second part: Image composition.</strong> <br/>Fix four pairs of corresponding&nbsp;points on source image and on target image.<br/>Calculate the homography matrix&nbsp;H and its inverse H'.<br/>The actual computation of the warped image&nbsp;was compeled using inverse-warping.<br/>And bi-linear interpolation was used to compute the pixel values for those non-integer image coordinates.&nbsp;<br/>Also a simple linear blending was implemented to eliminate the boundary after image composite.<br/></p><hr size="3" width="100%"/>
+                <p></p><p></p>
+                <center>
+                <p>                
+                <a href="proj1/Data/face.jpg"><img src="proj1/Data/face.jpg" height="150"/></a> 
+                <a href="proj1/Data/laptop.jpg"><img src="proj1/Data/laptop.jpg" height="150"/></a>
+                <a href="proj1/Data/composited_laptop.jpg"><img src="proj1/Data/composited_laptop.jpg" height="150"/></a>
+                </p><p>[Composition example #1]<br/>sourceImage = <a href="proj1/Data/face.jpg">face.jpg<br/></a>
+                sourcePoints = <a href="proj1/Data/face.source">face.source<br/></a>
+                targetImage = <a href="proj1/Data/laptop.jpg">laptop.jpg<br/></a>
+                targetPoints = <a href="proj1/Data/laptop.target">laptop.target<br/></a>
+                outputFile = <a href="proj1/Data/composited_laptop.jpg">composited_laptop.jpg<br/><br/></a>
+                <a href="proj1/Data/mycube.jpg"><img src="proj1/Data/mycube.jpg" width="200"/></a>
+                <a href="proj1/Data/mycube.jpg"><img src="proj1/Data/mycube.jpg" width="200"/></a>
+                <a href="proj1/Data/composited_mycube.jpg"><img src="proj1/Data/composited_mycube.jpg" width="200"/></a>
+                </p><p>[Composition example #2]<br/>sourceImage = <a href="proj1/Data/mycube.jpg">mycube.jpg<br/></a>
+                sourcePoints = <a href="proj1/Data/mycube.source">mycube.source<br/></a>
+                targetImage = <a href="proj1/Data/mycube.jpg">mycube.jpg<br/></a>
+                targetPoints = <a href="proj1/Data/mycube.target">mycube.target<br/></a>
+                outputFile = <a href="proj1/Data/composited_mycube.jpg">composited_mycube.jpg<br/></a><br/>
+                <a href="proj1/Data/mycube.jpg"><img src="proj1/Data/mycube.jpg" width="200"/></a>
+                <a href="proj1/Data/table.jpg"><img src="proj1/Data/table.jpg" width="200"/></a>
+                <a href="proj1/Data/composited_table.jpg"><img src="proj1/Data/composited_table.jpg" width="200"/></a>
+                </p><p>[Composition example #3]<br/>sourceImage = <a href="proj1/Data/mycube.jpg">mycube.jpg<br/></a>
+                sourcePoints = <a href="proj1/Data/mycube.source">mycube.source<br/></a>
+                targetImage = <a href="proj1/Data/table.jpg">table.jpg<br/></a>
+                targetPoints = <a href="proj1/Data/table.target">table.target<br/></a>
+                outputFile = <a href="proj1/Data/composited_table.jpg">composited_table.jpg</a></p>
+                </center>
+                <p></p>
+                <hr size="3" width="100%"/>
+				<p></p>
+              	<p></p>
+              	<p></p>
+            </tr>
+        </table>        
+        </center>
+        <br>
+	</body>     
+</html>

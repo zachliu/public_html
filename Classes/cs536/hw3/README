@@ -1,0 +1,51 @@
+README
+==============================================
+cs536: Computer Graphics I
+Assignment #3: Draw clipped, filled polygons
+==============================================
+
+by Zexi Liu
+on Nov 3rd, 2009
+
+In this assignment, I submitted the following three files:
+
+    README
+    cs536_hw3.cpp(contains main())
+    Makefile
+
+Language used:	C++
+OS used:	Windows 7
+Compiler used:	g++ in tux (ssh to tux server: tux.cs.drexel.edu)
+		Version 4.3.3 (Ubuntu 4.3.3-5ubuntu4)
+Compile/link:	Makefile has the default rule compile my program
+
+Libraries included:
+# iostream
+# fstream
+# cstring
+# ctype
+# cstdlib
+# cmath
+
+Features of the program:
+* It handles command-line options with any arbitrary order and any subset of the options.
+* It recognizes the mistakes in the input options such as illegal file name, unexpected 
+  characters, and so on.
+  eg.
+	if the input command is: 
+		./cs536_hw3 -f -r 30s -s 1.2 > out.xpm
+	error message will be:
+		Option '-f' missing arguments! Use default value: hw1.ps
+		Argument follows '-r' should be a integer number! '30s' is NOT a number!
+ 	
+	if the input command is:
+		./cs536_hw3 -f -r 30 -r 34 -s 1.2 > out.xpm
+	error message will be:
+		Option '-f' missing arguments! Use default value: hw1.ps
+		Too many '-r'! Only the 1st one will be accepted!
+
+* It reads a file containing an arbitrary number of polygons.
+* It uses Sutherland-Hodgman algorithm for polygon clipping.
+* It uses scan-line algorithm for polygon filling.
+* It uses Bresenham algorithm for line drawing.
+* It outputs final results to an xpm file.

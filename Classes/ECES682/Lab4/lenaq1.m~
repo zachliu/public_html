@@ -1,0 +1,75 @@
+%% Quantization trials
+%
+rms = @(x) mean(x(:).^2)^0.5;
+close all
+eightbit = [0 255];
+label = 1;
+
+%% The image
+len = imread('lena256.tif');
+lend = double(len);
+imshow(len)
+title('Original Image')
+%%
+len4 = 16*(round(lend/16));
+figure(2)
+imshow(len4, eightbit)
+title('Four bit quantization')
+imwrite(uint8(len4),'len4.tif')
+%% 
+figure(3)
+noise = 16*(rand(size(len))-0.5);
+len42 = 16*round((lend-noise)/16);
+imshow(len42, eightbit)
+title('Noise before quantization');
+diff = lend - len42;
+err = rms(diff);
+if label
+text(30,30, num2str(err), 'BackgroundColor', 'w', 'Color', 'k')
+end
+%%
+len41 = len4 + noise;
+figure(4)
+imshow(len41, eightbit)
+title('Four bits plus noise')
+hold on
+diff = lend - len41;
+err = rms(diff);
+if label
+text(30,30, num2str(err), 'BackgroundColor', 'w', 'Color', 'k')
+end
+%plot([277 352], [453 453], 'r')
+%%
+figure(5)
+len43 = len42+noise;
+imshow(len43, eightbit)
+title('Noise before and after');
+diff = lend - len43;
+err = rms(diff);
+if label
+text(30,30, num2str(err), 'BackgroundColor', 'w', 'Color', 'k')
+end
+%%
+%{figure(6)
+plot(len(453,277:352), 'k')
+hold on
+plot(len41(453,277:352), 'r')
+plot(len4(453,277:352), 'g')
+plot(len42(453,277:352), 'b')
+plot(len43(453,277:352), 'c')
+legend('Original', 'Four bits plus noise', 'Four bits', 'Noise before', 'Noise before and after')
+%}
+
+%%
+figure(7)
+len44 = lend+noise;
+imshow(len44, eightbit)
+title('image plus uniform noise');
+imwrite(uint8(len44),'len44.jpg')
+imwrite(len,'len.jpg')
+diff = lend - len44;
+err = rms(diff);
+if label
+text(30,30, num2str(err), 'BackgroundColor', 'w', 'Color', 'k')
+end
+

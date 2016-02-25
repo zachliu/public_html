@@ -1,0 +1,39 @@
+README
+==================================================
+cs536: Computer Graphics I
+Assignment #2: Sutherland-Hodgman polygon clipping
+==================================================
+
+by Zexi Liu
+on Oct 23rd, 2009
+
+In this assignment, I submitted the following three files:
+
+    README
+    cs536_hw2.cpp (contains main())
+    Makefile
+
+Language used:	C++
+OS used:	Windows Vista & Windows 7
+Compiler used:	g++ in tux (ssh to tux server: tux.cs.drexel.edu)
+		Version 4.3.3 (Ubuntu 4.3.3-5ubuntu4)
+Compile/link:	Makefile has the default rule compile my program
+
+Libraries included:
+# iostream
+# fstream
+# cstring
+# cctype
+# cstdlib
+# cmath
+
+Features of the program:
+* It handles command-line options with any arbitrary order and any subset of the options.
+* It recognizes the mistakes in the input options such as illegal file name, unexpected 
+  characters, and so on.
+* It read in a polygon from a file, applies 2D transformations to it, 
+  clips it against the world window using the Sutherland-Hodgman algorithm.
+* A linked list data structure has been used in this homework. The polygon from 
+  a ps file can have arbitrary number of vertices.
+* It uses Bresenham algorithm for line drawing.
+* It outputs final results to an xpm file.
